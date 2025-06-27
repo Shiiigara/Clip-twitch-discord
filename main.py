@@ -4,6 +4,7 @@ import requests
 import time
 import datetime
 
+
 # === CONFIGURATION ===
 TWITCH_CLIENT_ID = 'f22khnm9fxqaeiwwyjo5corih5jofw'
 TWITCH_CLIENT_SECRET = 'ciqlwgv5qil3gd7orqlbcosaz3igze'
