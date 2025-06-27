@@ -1,3 +1,19 @@
+# --- KEEP ALIVE POUR UPTIMEROBOT ---
+from http.server import BaseHTTPRequestHandler, HTTPServer
+import threading
+
+class PingHandler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        self.send_response(200)
+        self.end_headers()
+        self.wfile.write(b'Bot is alive.')
+
+def run_ping_server():
+    server = HTTPServer(('0.0.0.0', 8080), PingHandler)
+    server.serve_forever()
+
+threading.Thread(target=run_ping_server, daemon=True).start()
+
 
 import requests
 import time
